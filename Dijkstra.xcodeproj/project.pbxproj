@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FA85CC0D19A8CFFC00765407 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC0C19A8CFFC00765407 /* main.swift */; };
+		FA85CC1419A8E70600765407 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC1319A8E70600765407 /* Vertex.swift */; };
+		FA85CC1619A8FFF600765407 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC1519A8FFF600765407 /* PriorityQueue.swift */; };
+		FA85CC1819A9064900765407 /* Dijkstra.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC1719A9064900765407 /* Dijkstra.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		FA85CC0919A8CFFC00765407 /* Dijkstra */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Dijkstra; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85CC0C19A8CFFC00765407 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FA85CC1319A8E70600765407 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		FA85CC1519A8FFF600765407 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		FA85CC1719A9064900765407 /* Dijkstra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dijkstra.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +63,10 @@
 		FA85CC0B19A8CFFC00765407 /* Dijkstra */ = {
 			isa = PBXGroup;
 			children = (
+				FA85CC1319A8E70600765407 /* Vertex.swift */,
 				FA85CC0C19A8CFFC00765407 /* main.swift */,
+				FA85CC1519A8FFF600765407 /* PriorityQueue.swift */,
+				FA85CC1719A9064900765407 /* Dijkstra.swift */,
 			);
 			path = Dijkstra;
 			sourceTree = "<group>";
@@ -119,6 +128,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA85CC0D19A8CFFC00765407 /* main.swift in Sources */,
+				FA85CC1819A9064900765407 /* Dijkstra.swift in Sources */,
+				FA85CC1419A8E70600765407 /* Vertex.swift in Sources */,
+				FA85CC1619A8FFF600765407 /* PriorityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
