@@ -13,7 +13,7 @@ func readln() -> String {
     var keyboard = NSFileHandle.fileHandleWithStandardInput()
     var inputData = keyboard.availableData
     var input = String(NSString(data: inputData, encoding: NSUTF8StringEncoding))
-    return input
+    return input.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
 }
 
 func split(input: String) -> [String] {
@@ -23,7 +23,7 @@ func split(input: String) -> [String] {
 
 func readNumCases() -> Int {
     var input = readln()
-    var cases = input.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet()).toInt()
+    var cases = input.toInt()
     return cases!
 }
 
@@ -50,9 +50,9 @@ for _ in 1...testCases
     /* Input is of the format:
      * 3 2
      * indicating, 3 verticies, and 2 edges */
-    var edgesAndVerticies: (Int, Int) = readPair()
-    var numVerticies = edgesAndVerticies.0
-    var numEdges = edgesAndVerticies.1
+    var pair: (Int, Int) = readPair()
+    var numVerticies = pair.0
+    var numEdges = pair.1
     
     /* Vertex ids cannot be 0, so we need to make our Edge[][] a (v+1) x (v+1) size grid, where v is the number
      * of verticies in the input */
@@ -63,6 +63,7 @@ for _ in 1...testCases
     {
         var conditions = readGraph()
         
+        /* Create verticies and add neighbors */
         if !contains(verticies, conditions.vertexA)
         {
             verticies[conditions.vertexA.id] = conditions.vertexA
@@ -75,11 +76,12 @@ for _ in 1...testCases
         }
         verticies[conditions.vertexB.id].addNeighbor(conditions.vertexA)
         
+        /* Set edge weights for those verticies */
         edges[conditions.vertexA.id][conditions.vertexB.id] = conditions.edgeWeight
         edges[conditions.vertexB.id][conditions.vertexA.id] = conditions.edgeWeight
     }
     
-    var pair = readPair()
+    pair = readPair()
     var goalVerticies = (verticies[pair.0], verticies[pair.1])
     
     Dijkstra.solve(edges, &goalVerticies.0, &goalVerticies.1)
